@@ -1,9 +1,9 @@
 {
-  "name": "infocasas-frontend-challenge",
+  "name": "react-next-todolist",
   "version": "1.0.0",
-  "description": "InfoCasas Frontend Coding Challenge",
+  "description": "ReactJs && NextJs Playground",
   "main": "index.js",
-  "author": "InfoCasas Recruiting Team",
+  "author": "Juan Francisco Kurucz",
   "license": "MIT",
   "scripts": {
     "dev": "next",
