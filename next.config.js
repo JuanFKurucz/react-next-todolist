@@ -9,12 +9,6 @@ const development = {
 const config = process.env.REACT_APP_STAGE === 'production' ? production : development;
 
 module.exports = {
-    exportTrailingSlash: true,
-    exportPathMap: function () {
-        return {
-            '/react-next-todolist/': { page: '/' }
-        };
-    },
     publicRuntimeConfig: {
         ...config
     }

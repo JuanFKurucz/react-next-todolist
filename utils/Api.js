@@ -36,7 +36,7 @@ class ApiClass {
     }
 
     _delete = async (urlPath, id) => {
-        let uri = this.url + urlPath + "/" + id;
+        let uri = this.url + urlPath + "/"+id;
         const options = {
             method: "DELETE"
         }
@@ -55,17 +55,17 @@ class ApiClass {
         return await this._send("todos", "POST", object);
     };
 
-    updateTodo = async (id, object) => {
+    updateTodo = async (id,object) => {
         if (Utils.validIdentificator(id)) {
-            return await this._send("todos/" + id, "PUT", object);
+            return await this._send("todos/"+id, "PUT", object);
         } else {
             return null;
         }
     };
 
-    updatePartialTodo = async (id, object) => {
+    updatePartialTodo = async (id,object) => {
         if (Utils.validIdentificator(id)) {
-            return await this._send("todos/" + id, "PATCH", object);
+            return await this._send("todos/"+id, "PATCH", object);
         } else {
             return null;
         }
@@ -80,7 +80,7 @@ class ApiClass {
     };
 }
 
-const { publicRuntimeConfig } = getConfig()
-const { API_URL } = publicRuntimeConfig
+const {publicRuntimeConfig} = getConfig()
+const {API_URL} = publicRuntimeConfig
 const Api = new ApiClass(API_URL);
 export default Api;

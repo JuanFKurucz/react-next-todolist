@@ -3,7 +3,7 @@
  * ToDoList main table
  */
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Table } from 'reactstrap';
 import { FaTrashAlt, FaPencilAlt } from 'react-icons/fa';
 import EditTask from "./EditTask";

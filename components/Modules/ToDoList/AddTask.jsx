@@ -82,14 +82,14 @@ const AddTask = (props) => {
 
       <Row>
         <Col>
-          <AlertBox type="danger" visible={errorText.length>0}>
+          <AlertBox type="danger" visible={errorText.length > 0}>
             {errorText}
           </AlertBox>
         </Col>
       </Row>
       <Row>
-        <Col>
-          <Button color="primary" className="buttonFilter" onClick={addTask}>Add task</Button>
+        <Col className="centeredCell">
+          <Button color="primary" className="buttonCard" onClick={addTask}>Add task</Button>
         </Col>
       </Row>
     </Form>

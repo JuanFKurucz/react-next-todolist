@@ -1,3 +1,7 @@
+body{
+    background-color: #c4c4c4;
+}
+
 .centeredCell{
     text-align:center;
 }
@@ -10,18 +14,28 @@
     color:red;
 }
 
-.buttonFilter{
-    float:right;
-    width:25%;
+.buttonCard{
+    width:50%;
+    white-space: nowrap;
 }
 
 .cardHeader {
     text-align:center;
     font-weight: bold;
-    font-size: 3vh;
+    font-size: 21px;
+}
+
+@media (max-width: 1000px) {
+    .cardBox {
+        margin-top:3vh;
+    }
 }
 
 .cardBox {
     border: 1px solid rgba(0, 0, 0, 0.2);
     padding:10px;
+}
+
+.rowList {
+    margin-top:3vh;
 }

@@ -1,15 +1,14 @@
 {
-  "name": "react-next-todolist",
+  "name": "infocasas-frontend-challenge",
   "version": "1.0.0",
-  "description": "ReactJs NextJs ToDoList",
+  "description": "InfoCasas Frontend Coding Challenge",
   "main": "index.js",
-  "author": "Juan Francisco Kurucz",
+  "author": "InfoCasas Recruiting Team",
   "license": "MIT",
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "export": "next export"
+    "start": "next start"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",

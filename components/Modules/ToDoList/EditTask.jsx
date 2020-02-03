@@ -11,7 +11,7 @@ import Api from "../../../utils/Api";
 const EditTask = props => {
     const [modal, setModal] = useState(false);
     const toggleModal = () => {
-        if(modal){
+        if (modal) {
             props.onClose();
         }
         setModal(!modal)
@@ -26,7 +26,7 @@ const EditTask = props => {
         const fetchData = async () => {
             if (props.editId > 0) {
                 const row = await Api.getTodos({ id: props.editId });
-                if (row !== null && row.length>0) {
+                if (row !== null && row.length > 0) {
                     setModal(true);
                     setUserId(row[0].userId);
                     setTitle(row[0].title);
@@ -73,7 +73,7 @@ const EditTask = props => {
             setErrorText("");
             await props.updateItem(props.editId, todoObject);
             setModal(false);
-            this.onClose();
+            props.onClose();
         } else {
             setErrorText(errors.join(", "));
         }
