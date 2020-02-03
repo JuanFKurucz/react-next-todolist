@@ -6,7 +6,7 @@
  */
 
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Api from '../utils/Api';
 import { Layout } from '../components/Template'
 import ToDoListModule from '../components/Modules/ToDoListModule'
@@ -15,22 +15,22 @@ const HomePage = props => {
   const [users, setUsers] = useState(props.users);
   const [list, setList] = useState(props.list);
 
-  const filterAction = async (filters,sort=null) => {
-    const newProps = await HomePage.loadTable(filters,sort);
+  const filterAction = async (filters, sort = null) => {
+    const newProps = await HomePage.loadTable(filters, sort);
     setUsers(newProps.users);
     setList(newProps.list);
   }
 
   return (
     <Layout>
-        <ToDoListModule onUpdate={filterAction} users={users} rows={list} />
+      <ToDoListModule onUpdate={filterAction} users={users} rows={list} />
     </Layout>
   );
 }
 
-HomePage.loadTable = async (filters=null,sort=null) => {
+HomePage.loadTable = async (filters = null, sort = null) => {
   let todoFilterObject = null;
-  if(filters !== null && Object.keys(filters).length>0){
+  if (filters !== null && Object.keys(filters).length > 0) {
     todoFilterObject = {
       ...filters
     };
@@ -41,15 +41,15 @@ HomePage.loadTable = async (filters=null,sort=null) => {
     x.user = users_data.find(o => o.id === x.userId)
     return x;
   });
-  if(sort !== null){
-    let order = (sort === true)? -1 : 1;
-    list = list.sort((x,y) => (x.completed > y.completed) ? order : order*-1);
+  if (sort !== null) {
+    let order = (sort === true) ? -1 : 1;
+    list = list.sort((x, y) => (x.completed > y.completed) ? order : order * -1);
   }
 
-  return { list, users:users_data };
+  return { list, users: users_data };
 }
 
-HomePage.getInitialProps = async () =>  {
+HomePage.getInitialProps = async () => {
   return await HomePage.loadTable();
 };
 

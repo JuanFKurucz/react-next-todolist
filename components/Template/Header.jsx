@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navbar, NavbarToggler, NavbarBrand} from 'reactstrap';
+import { Navbar, NavbarToggler, NavbarBrand } from 'reactstrap';
 
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
